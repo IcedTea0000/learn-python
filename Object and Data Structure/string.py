@@ -1,2 +1,2 @@
-text = 'test string'
-print(text.split('t'))
+# text = 'test string'
+# print(text.split('t'))
