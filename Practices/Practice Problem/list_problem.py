@@ -1,3 +1,6 @@
+import json
+
+
 def cumulative_sum(input_list=[]):
     """takes a list of numbers and returns the cumulative
     sum; that is, a new list where the ith element is the sum of the first i+1 elements from
@@ -58,6 +61,20 @@ def has_duplicates2(input_list=[]):
     return not len(temp_set) == len(input_list)
 
 
+def count_char(input_list=[]):
+    """
+    input: list
+    output: dictionary with key=character, value=count number of character
+    """
+    result_dict = {}
+    for member in input_list:
+        if member not in result_dict:
+            result_dict.update({member: 1})
+        else:
+            result_dict[member] += 1
+    return result_dict
+
+
 if __name__ == '__main__':
     # print(cumulative_sum([]))
     # print(middle([1, 2, 3, 4, 5]))
@@ -68,6 +85,9 @@ if __name__ == '__main__':
 
     # print(is_sorted(test_list))
 
-    test_list = []
-    print(has_duplicates1(test_list))
-    print(has_duplicates2(test_list))
+    # test_list = []
+    # print(has_duplicates1(test_list))
+    # print(has_duplicates2(test_list))
+
+    test_list = [1, 1, 1, 2, 3, 3, 3, 3, 3, 4, 5, 6]
+    print(json.dumps(count_char(test_list), indent=2))
