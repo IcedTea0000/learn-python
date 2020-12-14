@@ -53,23 +53,28 @@ def inverse_frequency_dict2(input_dict={}):
     print('Total loop count {}'.format(total_loop_count))
     return result_dict
 
-def inverse_frequency_dict3(input_dict={}):
-        """
 
-        :param input_dict: frequency dictionary
-        :return: dictionary with K=number of appearance, V = list of member
-        """
-        total_loop_count = 0
-        result_dict = dict()
-        for character in input_dict:
-            total_loop_count += 1
-            char_count = input_dict[character]
-            result_dict.setdefault(character, char_count]
-        print('Total loop count {}'.format(total_loop_count))
-        return result_dict
+def inverse_frequency_dict3(input_dict={}):
+    """
+
+    :param input_dict: frequency dictionary
+    :return: dictionary with K=number of appearance, V = list of member
+    """
+    total_loop_count = 0
+    result_dict = dict()
+    for character in input_dict:
+        total_loop_count += 1
+        char_count = input_dict[character]
+        result_dict.setdefault(char_count, []).append(
+            character)  # check if key char_count not exist, if not create an empty list for value, then append character
+    print('Total loop count {}'.format(total_loop_count))
+    return result_dict
+
 
 if __name__ == '__main__':
     test_list = ['a', 'a', 'b', 'b', 'c', 'c', 'c']
     print(json.dumps(inverse_frequency_dict1(frequency_dict(test_list)), indent=2))
     print(json.dumps(inverse_frequency_dict2(frequency_dict(test_list)), indent=2))
+    print(json.dumps(inverse_frequency_dict3(frequency_dict(test_list)), indent=2))
+
     pass

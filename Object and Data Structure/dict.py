@@ -10,7 +10,9 @@
 
 
 
-text = 'agfsbc'
-print(sorted(text))
+# text = 'agfsbc'
+# print(sorted(text))
+# raise LookupError()
 
-raise LookupError()
+dict = {1:'a'}
+print(dict.get(1,'b'))
