@@ -14,5 +14,11 @@
 # print(sorted(text))
 # raise LookupError()
 
-dict = {1:'a'}
-print(dict.get(1,'b'))
+dict = {1:'a',2:'b'}
+# print(dict.get(1,'b'))
+list = list(dict.items())
+print(list)
+# list2 = [(2,'c'),(1,'a'),(3,'b')]
+# list2.sort()
+# print(list2)
+
