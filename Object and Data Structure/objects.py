@@ -1,3 +1,5 @@
+import json
+
 class Customer():
     def __init__(self, name):
         self.name = name
@@ -27,6 +29,9 @@ class ElderCustomer(Customer2):
     def register(self):
         print('{} registers with override method'.format(self.name))
 
+
+    def __str__(self):
+        return json.dumps(self.__dict__, indent=2)
     pass
 
 
@@ -48,3 +53,5 @@ if __name__ == '__main__':
     print(my_elder_customer.area)
     my_elder_customer.name = 'Elder'
     my_elder_customer.register()
+
+    print(my_elder_customer)
