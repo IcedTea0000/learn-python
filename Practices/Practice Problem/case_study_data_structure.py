@@ -50,6 +50,6 @@ def export_book_data(file_path):
 
 
 if __name__ == '__main__':
-    file_path = 'C:\\workspace\\learn-python\\Object and Data Structure\\crime_book.txt'
+    file_path = '/ObjectAndDataStructure\\crime_book.txt'
     # get_all_words(file_path)
     print(json.dumps(export_book_data(file_path), indent=2))
